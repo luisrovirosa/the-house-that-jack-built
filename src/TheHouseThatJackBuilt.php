@@ -8,10 +8,11 @@ class TheHouseThatJackBuilt
     {
         $first = "the house that Jack built";
         $second = "the malt that lay in";
+        $third = "the rat that ate";
         return [
             "This is $first.",
             "This is $second $first.",
-            "This is the rat that ate $second $first."
+            "This is $third $second $first."
         ];
     }
 }
