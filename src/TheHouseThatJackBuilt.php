@@ -14,14 +14,17 @@ class TheHouseThatJackBuilt
 
         $fullSentence = [];
 
-        for ($j = 0; $j < 1; $j++){
-            $fullSentence[0] = " " . $verses[$j];
+        for ($i = 0; $i < count($verses); $i++) {
+            $fullSentence[$i] = '';
+            for ($j = 0; $j <= $i; $j++) {
+                $fullSentence[$i] = " " . $verses[$j]  . $fullSentence[$i];
+            }
         }
 
         return [
             "This is{$fullSentence[0]}.",
-            "This is {$verses[1]} {$verses[0]}.",
-            "This is {$verses[2]} {$verses[1]} {$verses[0]}."
+            "This is{$fullSentence[1]}.",
+            "This is{$fullSentence[2]}."
         ];
     }
 }
