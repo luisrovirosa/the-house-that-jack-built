@@ -19,12 +19,9 @@ class TheHouseThatJackBuilt
             for ($j = 0; $j <= $i; $j++) {
                 $fullSentence[$i] = " " . $verses[$j]  . $fullSentence[$i];
             }
+            $fullSentence[$i] = "This is{$fullSentence[$i]}.";
         }
 
-        return [
-            "This is{$fullSentence[0]}.",
-            "This is{$fullSentence[1]}.",
-            "This is{$fullSentence[2]}."
-        ];
+        return $fullSentence;
     }
 }
