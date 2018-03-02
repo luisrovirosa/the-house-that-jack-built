@@ -3,6 +3,7 @@
 namespace Tests\Codium\TheHouseThatJackBuilt;
 
 use Codium\TheHouseThatJackBuilt\EchoHouseThatJackBuilt;
+use Codium\TheHouseThatJackBuilt\ReverseEchoHouseThatJackBuilt;
 use Codium\TheHouseThatJackBuilt\ReverseHouseThatJackBuilt;
 use Codium\TheHouseThatJackBuilt\TheHouseThatJackBuilt;
 use PHPUnit\Framework\TestCase;
@@ -56,6 +57,21 @@ class TheHouseThatJackBuiltTest extends TestCase
             'This is the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.',
             'This is the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.',
             'This is the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.',
+        ], $theHouseThatJackBuilt->song());
+    }
+
+
+    /** @test */
+    public function songs_the_reverse_echo_house_version_of_the_house_that_jack_built()
+    {
+        $theHouseThatJackBuilt = new ReverseEchoHouseThatJackBuilt();
+
+        $this->assertEquals([
+            'This is the dog that worried the dog that worried.',
+            'This is the cat that killed the cat that killed the dog that worried the dog that worried.',
+            'This is the rat that ate the rat that ate the cat that killed the cat that killed the dog that worried the dog that worried.',
+            'This is the malt that lay in the malt that lay in the rat that ate the rat that ate the cat that killed the cat that killed the dog that worried the dog that worried.',
+            'This is the house that Jack built the house that Jack built the malt that lay in the malt that lay in the rat that ate the rat that ate the cat that killed the cat that killed the dog that worried the dog that worried.'
         ], $theHouseThatJackBuilt->song());
     }
 
