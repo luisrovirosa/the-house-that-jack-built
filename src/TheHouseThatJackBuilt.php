@@ -5,7 +5,7 @@ namespace Codium\TheHouseThatJackBuilt;
 class TheHouseThatJackBuilt
 {
     /** @var string[] */
-    private $verses;
+    protected $verses;
 
     public function __construct()
     {
