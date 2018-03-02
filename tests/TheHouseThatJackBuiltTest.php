@@ -30,10 +30,15 @@ class TheHouseThatJackBuiltTest extends TestCase
     /** @test */
     public function the_third_verse_is_ok()
     {
+        $this->assertVerseNumberEquals("This is the rat that ate the malt that lay in the house that Jack built.", 3);
+    }
+
+    protected function assertVerseNumberEquals(string $expectedVerse, int $numberOfVerse): void
+    {
         $sut = new TheHouseThatJackBuilt();
 
         $song = $sut->song();
 
-        $this->assertEquals("This is the rat that ate the malt that lay in the house that Jack built.", $song[2]);
+        $this->assertEquals($expectedVerse, $song[$numberOfVerse - 1]);
     }
 }
