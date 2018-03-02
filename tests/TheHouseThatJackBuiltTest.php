@@ -10,21 +10,13 @@ class TheHouseThatJackBuiltTest extends TestCase
     /** @test */
     public function the_fist_verse_is_ok()
     {
-        $sut = new TheHouseThatJackBuilt();
-
-        $song = $sut->song();
-
-        $this->assertEquals("This is the house that Jack built.", $song[0]);
+        $this->assertVerseNumberEquals("This is the house that Jack built.", 1);
     }
 
     /** @test */
     public function the_second_verse_is_ok()
     {
-        $sut = new TheHouseThatJackBuilt();
-
-        $song = $sut->song();
-
-        $this->assertEquals("This is the malt that lay in the house that Jack built.", $song[1]);
+        $this->assertVerseNumberEquals("This is the malt that lay in the house that Jack built.", 2);
     }
 
     /** @test */
