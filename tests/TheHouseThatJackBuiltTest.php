@@ -16,4 +16,14 @@ class TheHouseThatJackBuiltTest extends TestCase
 
         $this->assertEquals("This is the house that Jack built.", $song[0]);
     }
+
+    /** @test */
+    public function the_second_verse_is_ok()
+    {
+        $sut = new TheHouseThatJackBuilt();
+
+        $song = $sut->song();
+
+        $this->assertEquals("This is the malt that lay in the house that Jack built.", $song[1]);
+    }
 }
