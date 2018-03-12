@@ -2,6 +2,7 @@
 
 namespace Tests\Codium\TheHouseThatJackBuilt;
 
+use Codium\TheHouseThatJackBuilt\HouseFactory;
 use Codium\TheHouseThatJackBuilt\TheHouseThatJackBuilt;
 use PHPUnit\Framework\TestCase;
 

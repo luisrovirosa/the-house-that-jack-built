@@ -1,12 +1,11 @@
 <?php
 
-namespace Tests\Codium\TheHouseThatJackBuilt;
+namespace Codium\TheHouseThatJackBuilt;
 
 use Codium\TheHouseThatJackBuilt\Formatter\EchoFormatter;
 use Codium\TheHouseThatJackBuilt\Formatter\NormalFormatter;
 use Codium\TheHouseThatJackBuilt\Order\NormalOrder;
 use Codium\TheHouseThatJackBuilt\Order\ReverseOrder;
-use Codium\TheHouseThatJackBuilt\TheHouseThatJackBuilt;
 
 class HouseFactory
 {

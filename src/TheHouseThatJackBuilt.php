@@ -35,7 +35,7 @@ class TheHouseThatJackBuilt
         return $fullSentence;
     }
 
-    protected function verse(int $numberOfVerse): string
+    private function verse(int $numberOfVerse): string
     {
         $verse = '';
         for ($i = 0; $i <= $numberOfVerse; $i++) {
