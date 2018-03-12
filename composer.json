@@ -1,8 +1,12 @@
 {
     "name": "codium/the-house-that-jack-built",
     "description": "Kata of The House That Jack Built",
+    "require": {
+        "php": "^7.1"
+    },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^7.0",
+        "infection/infection": "^0.8.1"
     },
     "authors": [
         {
