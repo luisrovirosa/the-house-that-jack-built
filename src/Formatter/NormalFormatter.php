@@ -2,7 +2,7 @@
 
 namespace Codium\TheHouseThatJackBuilt\Formatter;
 
-class NormalFormatter
+class NormalFormatter implements Formatter
 {
     public function format(array $verses)
     {
