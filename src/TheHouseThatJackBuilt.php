@@ -3,15 +3,16 @@
 namespace Codium\TheHouseThatJackBuilt;
 
 use Codium\TheHouseThatJackBuilt\Order\NormalOrder;
+use Codium\TheHouseThatJackBuilt\Order\Order;
 
 class TheHouseThatJackBuilt
 {
     /** @var string[] */
     protected $verses;
 
-    public function __construct()
+    public function __construct(Order $order = null)
     {
-        $order = new NormalOrder();
+        $order = $order ?? new NormalOrder();
 
         $this->verses = $order->sort([
             "the house that Jack built",
