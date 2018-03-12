@@ -9,8 +9,6 @@ class EchoHouseThatJackBuilt extends TheHouseThatJackBuilt
 {
     public function __construct(Order $order = null)
     {
-        parent::__construct($order);
-        $formatter = new EchoFormatter();
-        $this->verses = $formatter->format($this->verses);
+        parent::__construct($order, new EchoFormatter());
     }
 }
