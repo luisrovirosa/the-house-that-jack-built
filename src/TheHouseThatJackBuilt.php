@@ -2,6 +2,7 @@
 
 namespace Codium\TheHouseThatJackBuilt;
 
+use Codium\TheHouseThatJackBuilt\Formatter\Formatter;
 use Codium\TheHouseThatJackBuilt\Formatter\NormalFormatter;
 use Codium\TheHouseThatJackBuilt\Order\NormalOrder;
 use Codium\TheHouseThatJackBuilt\Order\Order;
@@ -19,10 +20,10 @@ class TheHouseThatJackBuilt
     /** @var string[] */
     protected $verses;
 
-    public function __construct(Order $order = null)
+    public function __construct(Order $order = null, Formatter $formatter = null)
     {
         $order = $order ?? new NormalOrder();
-        $formatter = new NormalFormatter();
+        $formatter = $formatter ?? new NormalFormatter();
 
         $this->verses = $formatter->format($order->sort(self::VERSES));
     }
