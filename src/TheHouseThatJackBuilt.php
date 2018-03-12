@@ -7,6 +7,14 @@ use Codium\TheHouseThatJackBuilt\Order\Order;
 
 class TheHouseThatJackBuilt
 {
+    private const VERSES = [
+        "the house that Jack built",
+        "the malt that lay in",
+        "the rat that ate",
+        "the cat that killed",
+        "the dog that worried"
+    ];
+
     /** @var string[] */
     protected $verses;
 
@@ -14,13 +22,7 @@ class TheHouseThatJackBuilt
     {
         $order = $order ?? new NormalOrder();
 
-        $this->verses = $order->sort([
-            "the house that Jack built",
-            "the malt that lay in",
-            "the rat that ate",
-            "the cat that killed",
-            "the dog that worried"
-        ]);
+        $this->verses = $order->sort(self::VERSES);
     }
 
     public function song(): array
