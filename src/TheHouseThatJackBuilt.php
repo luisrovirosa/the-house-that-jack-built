@@ -3,8 +3,6 @@
 namespace Codium\TheHouseThatJackBuilt;
 
 use Codium\TheHouseThatJackBuilt\Formatter\Formatter;
-use Codium\TheHouseThatJackBuilt\Formatter\NormalFormatter;
-use Codium\TheHouseThatJackBuilt\Order\NormalOrder;
 use Codium\TheHouseThatJackBuilt\Order\Order;
 
 class TheHouseThatJackBuilt
@@ -16,16 +14,14 @@ class TheHouseThatJackBuilt
         "the cat that killed",
         "the dog that worried"
     ];
-
     /** @var string[] */
     protected $verses;
 
-    public function __construct(Order $order = null, Formatter $formatter = null)
+    public function __construct(Order $order, Formatter $formatter)
     {
-        $order = $order ?? new NormalOrder();
-        $formatter = $formatter ?? new NormalFormatter();
-
-        $this->verses = $formatter->format($order->sort(self::VERSES));
+        $this->verses = $formatter->format(
+            $order->sort(self::VERSES)
+        );
     }
 
     public function song(): array
