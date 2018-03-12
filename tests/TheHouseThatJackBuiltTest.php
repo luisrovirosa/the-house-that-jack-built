@@ -2,10 +2,6 @@
 
 namespace Tests\Codium\TheHouseThatJackBuilt;
 
-use Codium\TheHouseThatJackBuilt\Formatter\EchoFormatter;
-use Codium\TheHouseThatJackBuilt\Formatter\NormalFormatter;
-use Codium\TheHouseThatJackBuilt\Order\NormalOrder;
-use Codium\TheHouseThatJackBuilt\Order\ReverseOrder;
 use Codium\TheHouseThatJackBuilt\TheHouseThatJackBuilt;
 use PHPUnit\Framework\TestCase;
 
@@ -87,21 +83,21 @@ class TheHouseThatJackBuiltTest extends TestCase
 
     protected function theHouseThatJackBuilt(): TheHouseThatJackBuilt
     {
-        return new TheHouseThatJackBuilt(new NormalOrder(), new NormalFormatter());
+        return (new HouseFactory())->normalHouse();
     }
 
     protected function reverseHouseThatJackBuilt(): TheHouseThatJackBuilt
     {
-        return new TheHouseThatJackBuilt(new ReverseOrder(), new NormalFormatter());
+        return (new HouseFactory())->reverseHouse();
     }
 
     protected function echoHouseThatJackBuilt(): TheHouseThatJackBuilt
     {
-        return new TheHouseThatJackBuilt(new NormalOrder(), new EchoFormatter());
+        return (new HouseFactory())->echoHouse();
     }
 
     protected function reverseEchoHouseThatJackBuilt(): TheHouseThatJackBuilt
     {
-        return new TheHouseThatJackBuilt(new ReverseOrder(), new EchoFormatter());
+        return (new HouseFactory())->reverseEchoHouse();
     }
 }
