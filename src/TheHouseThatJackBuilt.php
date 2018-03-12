@@ -2,6 +2,8 @@
 
 namespace Codium\TheHouseThatJackBuilt;
 
+use Codium\TheHouseThatJackBuilt\Order\NormalOrder;
+
 class TheHouseThatJackBuilt
 {
     /** @var string[] */
@@ -9,13 +11,15 @@ class TheHouseThatJackBuilt
 
     public function __construct()
     {
-        $this->verses = [
+        $order = new NormalOrder();
+
+        $this->verses = $order->sort([
             "the house that Jack built",
             "the malt that lay in",
             "the rat that ate",
             "the cat that killed",
             "the dog that worried"
-        ];
+        ]);
     }
 
     public function song(): array
