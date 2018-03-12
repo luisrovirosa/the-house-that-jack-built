@@ -2,6 +2,7 @@
 
 namespace Codium\TheHouseThatJackBuilt;
 
+use Codium\TheHouseThatJackBuilt\Formatter\NormalFormatter;
 use Codium\TheHouseThatJackBuilt\Order\NormalOrder;
 use Codium\TheHouseThatJackBuilt\Order\Order;
 
@@ -21,8 +22,9 @@ class TheHouseThatJackBuilt
     public function __construct(Order $order = null)
     {
         $order = $order ?? new NormalOrder();
+        $formatter = new NormalFormatter();
 
-        $this->verses = $order->sort(self::VERSES);
+        $this->verses = $formatter->format($order->sort(self::VERSES));
     }
 
     public function song(): array
