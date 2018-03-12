@@ -2,7 +2,7 @@
 
 namespace Codium\TheHouseThatJackBuilt\Order;
 
-class NormalOrder
+class NormalOrder implements Order
 {
     public function sort(array $verses): array
     {
