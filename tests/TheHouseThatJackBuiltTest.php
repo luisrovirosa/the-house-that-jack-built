@@ -21,7 +21,7 @@ class TheHouseThatJackBuiltTest extends TestCase
     /** @test */
     public function songs_the_regular_version_of_the_house_that_jack_built()
     {
-        $theHouseThatJackBuilt = new TheHouseThatJackBuilt();
+        $theHouseThatJackBuilt = $this->theHouseThatJackBuilt();
 
         $this->assertEquals([
             'This is the house that Jack built.',
@@ -35,7 +35,7 @@ class TheHouseThatJackBuiltTest extends TestCase
     /** @test */
     public function songs_the_reverse_house_version_of_the_house_that_jack_built()
     {
-        $theHouseThatJackBuilt = new ReverseHouseThatJackBuilt();
+        $theHouseThatJackBuilt = $this->reverseHouseThatJackBuilt();
 
         $this->assertEquals([
             'This is the dog that worried.',
@@ -49,7 +49,7 @@ class TheHouseThatJackBuiltTest extends TestCase
     /** @test */
     public function songs_the_echo_house_version_of_the_house_that_jack_built()
     {
-        $theHouseThatJackBuilt = new EchoHouseThatJackBuilt();
+        $theHouseThatJackBuilt = $this->echoHouseThatJackBuilt();
 
         $this->assertEquals([
             'This is the house that Jack built the house that Jack built.',
@@ -64,7 +64,7 @@ class TheHouseThatJackBuiltTest extends TestCase
     /** @test */
     public function songs_the_reverse_echo_house_version_of_the_house_that_jack_built()
     {
-        $theHouseThatJackBuilt = new ReverseEchoHouseThatJackBuilt();
+        $theHouseThatJackBuilt = $this->reverseEchoHouseThatJackBuilt();
 
         $this->assertEquals([
             'This is the dog that worried the dog that worried.',
@@ -77,10 +77,30 @@ class TheHouseThatJackBuiltTest extends TestCase
 
     protected function assertVerseNumberEquals(string $expectedVerse, int $numberOfVerse): void
     {
-        $sut = new TheHouseThatJackBuilt();
+        $sut = $this->theHouseThatJackBuilt();
 
         $song = $sut->song();
 
         $this->assertEquals($expectedVerse, $song[$numberOfVerse - 1]);
+    }
+
+    protected function theHouseThatJackBuilt(): TheHouseThatJackBuilt
+    {
+        return new TheHouseThatJackBuilt();
+    }
+
+    protected function reverseHouseThatJackBuilt(): TheHouseThatJackBuilt
+    {
+        return new ReverseHouseThatJackBuilt();
+    }
+
+    protected function echoHouseThatJackBuilt(): TheHouseThatJackBuilt
+    {
+        return new EchoHouseThatJackBuilt();
+    }
+
+    protected function reverseEchoHouseThatJackBuilt(): TheHouseThatJackBuilt
+    {
+        return new ReverseEchoHouseThatJackBuilt();
     }
 }
