@@ -70,8 +70,8 @@ Create a program that returns the list of verse with echo of a part of The House
             the cat that killed 
             the rat that ate 
             the rat that ate 
-            the malt the that lay in 
-            the malt the that lay in 
+            the malt that lay in 
+            the malt that lay in 
             the house that Jack built 
             the house that Jack built.
 
@@ -81,8 +81,8 @@ Create a program that returns the list of verse with echo of a part of The House
             the cat that killed 
             the rat that ate 
             the rat that ate 
-            the malt the that lay in 
-            the malt the that lay in 
+            the malt that lay in 
+            the malt that lay in 
             the house that Jack built 
             the house that Jack built.
 
